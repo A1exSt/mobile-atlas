@@ -85,6 +85,16 @@ cd mobile-atlas
 MAM_TOKEN=<token for management server> API_TOKEN=<SIM tunnel token> sudo ./probe.py --host <SIM provider address> --testname TestNetworkInfo --configfile mobileatlas/probe/test_config.json
 ```
 
+#### Selecting the Modem and Adapater Types
+
+By default, MobileAtlas is configured to use the Quectel EG25-G (4G) modem along with the mPCIe modem adapter.
+However, you can easily switch to other modem or adapter types using command-line arguments.
+
+To run MobileAtlas with the Quectel RM520N (5G) modem, add `--modem rm520` when running the `probe.py`.
+
+Similarly, the modem adapter can be changed from its default setting (`--modem-adapter  mpcie`, for the 4G variant) to the M.2 adapter required for the newer 5G probes by adding `--modem-adapter m2`.
+
+
 #### Test Config
 
 A json formatted config file containing the experiment's configuration parameters has to be provided when executing the probe.
